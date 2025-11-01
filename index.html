@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peer-to-Peer Study Material Sharing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Landing Page -->
+  <section id="landing-page" class="active">
+    <div class="overlay">
+      <h1>Peer-to-Peer Study Material Sharing</h1>
+      <p>Share and download notes, papers & resources with your peers.</p>
+      <button id="login-btn">Login / Sign Up</button>
+    </div>
+  </section>
+
+  <!-- Login Page -->
+  <section id="login-page">
+    <div class="form-container">
+      <h2>Login</h2>
+      <input type="text" placeholder="Username" id="username" />
+      <input type="password" placeholder="Password" id="password" />
+      <button id="signin">Login</button>
+      <p>Don't have an account? <span id="goto-signup">Sign Up</span></p>
+      <button class="back-btn">⬅ Back</button>
+    </div>
+  </section>
+
+  <!-- Sign Up Page -->
+  <section id="signup-page">
+    <div class="form-container">
+      <h2>Student Sign Up</h2>
+      <input type="text" placeholder="First Name" />
+      <input type="text" placeholder="Middle Name" />
+      <input type="text" placeholder="Last Name" />
+      <input type="text" placeholder="Roll Number" />
+      <select>
+        <option selected disabled>Course</option>
+        <option>BCA</option>
+        <option>BBA</option>
+      </select>
+      <select>
+        <option selected disabled>Semester</option>
+        <option>1</option><option>2</option><option>3</option>
+        <option>4</option><option>5</option><option>6</option>
+      </select>
+      <select>
+        <option selected disabled>Section</option>
+        <option>A</option><option>B</option><option>C</option>
+        <option>D</option><option>E</option><option>F</option>
+        <option>G</option><option>H</option>
+      </select>
+      <button id="create-account">Create Account</button>
+      <button class="back-btn">⬅ Back</button>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard">
+    <div class="dashboard-container">
+      <h2>Welcome, Student 👋</h2>
+      <div class="card-grid">
+        <div class="card" id="upload-section">
+          <h3>Upload</h3>
+          <p>Share your notes or papers with others.</p>
+        </div>
+        <div class="card" id="download-section">
+          <h3>Download</h3>
+          <p>Access study materials shared by peers.</p>
+        </div>
+      </div>
+      <button id="logout-btn" class="back-btn">⬅ Logout</button>
+    </div>
+  </section>
+
+  <!-- Upload Section -->
+  <section id="upload-page">
+    <div class="form-container">
+      <h2>📤 Share Your Knowledge</h2>
+      <select id="upload-course">
+        <option selected disabled>Select Course</option>
+        <option>BBA</option>
+        <option>BCA</option>
+      </select>
+      <select id="upload-subject">
+        <option selected disabled>Select Subject</option>
+      </select>
+
+      <label for="file-title">Enter Title:</label>
+      <input type="text" id="file-title" placeholder="Enter material title..." />
+
+      <label for="file-input">Choose a File:</label>
+      <input type="file" id="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx" />
+      <p class="note">Allowed: PDF, DOC, PPT — Max 10 MB</p>
+      <button id="submit-upload">Upload Material</button>
+      <p id="upload-status"></p>
+      <button class="back-btn">⬅ Back</button>
+    </div>
+  </section>
+
+  <!-- Download Options -->
+  <section id="download-options">
+    <div class="option-container">
+      <h2>Download Section</h2>
+      <div class="card-grid">
+        <div class="card" id="subject-notes">
+          <h3>📘 Subject Notes</h3>
+        </div>
+        <div class="card" id="question-paper">
+          <h3>📄 Question Papers</h3>
+        </div>
+      </div>
+      <button class="back-btn">⬅ Back</button>
+    </div>
+  </section>
+
+  <!-- Subject Notes Section -->
+  <section id="subject-notes-list">
+    <div class="form-container">
+      <h2>Subject Notes</h2>
+      <select id="notes-course">
+        <option selected disabled>Select Course</option>
+        <option>BCA</option>
+        <option>BBA</option>
+      </select>
+      <select id="notes-semester">
+        <option selected disabled>Select Semester</option>
+        <option>1</option><option>2</option><option>3</option>
+        <option>4</option><option>5</option><option>6</option>
+      </select>
+      <button id="notes-submit">Submit</button>
+      <div id="notes-container" class="card-grid"></div>
+      <button class="back-btn">⬅ Back</button>
+    </div>
+  </section>
+
+  <!-- Question Paper Section -->
+  <section id="question-paper-list">
+    <div class="form-container">
+      <h2>Question Papers</h2>
+      <select id="qp-course">
+        <option selected disabled>Select Course</option>
+        <option>BCA</option>
+        <option>BBA</option>
+      </select>
+      <select id="qp-semester">
+        <option selected disabled>Select Semester</option>
+        <option>1</option><option>2</option><option>3</option>
+        <option>4</option><option>5</option><option>6</option>
+      </select>
+      <button id="qp-submit">Submit</button>
+      <div id="qp-container" class="card-grid"></div>
+      <button class="back-btn">⬅ Back</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

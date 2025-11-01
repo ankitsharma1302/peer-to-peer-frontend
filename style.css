@@ -1,0 +1,124 @@
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  overflow: hidden; /* prevent scroll on landing */
+}
+
+/* Landing page */
+#landing-page {
+  background: url('https://images.unsplash.com/photo-1557682250-33bd709cbe85') center/cover no-repeat;
+}
+
+#landing-page .overlay {
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#landing-page h1 {
+  font-size: 2.5rem;
+  color: #e50914;
+}
+
+/* All sections except landing */
+section:not(#landing-page) {
+  background: linear-gradient(-45deg, #0f0f0f, #141414, #1a1a1a, #e50914);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  height: 100vh;
+  overflow: hidden;
+}
+
+section {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+section.active {
+  display: flex;
+}
+
+/* Buttons */
+button {
+  background: #e50914;
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #f40612;
+}
+
+.back-btn {
+  margin-top: 20px;
+  background: #555;
+}
+
+/* Forms */
+.form-container {
+  background: rgba(20,20,20,0.9);
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 0 10px rgba(229,9,20,0.5);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+input, select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Cards */
+.card-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(229,9,20,0.3);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #333;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #bbb;
+}
